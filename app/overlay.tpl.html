@@ -1,0 +1,17 @@
+<div class="overlay-content-panel panel panel-default"
+ng-class="{'pull-right':(olScreenPosition!='left' && olScreenPosition!='center'),'pull-left':olScreenPosition=='left','center-block':olScreenPosition=='center'}">
+  <div ng-if="!olHideHeader" class="panel-heading">
+    <div class="panel-title">{{olTitle}}</div>
+    <ul ng-if="!olHidePanelActions" class="list-inline overlay-content-panel-actions">
+        <li ng-if="!fullScreen"><a href="" title="Go fullscreen" ng-click="goFullScreen()" ><i class="glyphicon glyphicon-resize-full"></i></a></li>
+        <li ng-if="fullScreen"><a href="" title="Go smallscreen" ng-click="goSmallScreen()" ><i class="glyphicon glyphicon-resize-small"></i></a></li>
+        <li ng-if="!fullScreen && olScreenPosition !=='left'"><a href="" title="Align Left" ng-click="goLeft()" ><i class="glyphicon glyphicon-align-left"></i></a></li>
+        <li ng-if="!fullScreen && olScreenPosition !=='center'"><a href="" title="Align Center" ng-click="goCenter()"><i class="glyphicon glyphicon-align-center"></i></a></li>
+        <li ng-if="!fullScreen && olScreenPosition !=='right'"><a href="" title="Align Right" ng-click="goRight()" ><i class="glyphicon glyphicon-align-right"></i></a></li>
+        <li ng-if="!olHideClose" ><a href="" id="panel-remove" title="Close" ng-click="goToggleOverlayPanel()" ><i class="glyphicon glyphicon-remove"></i></a></li>
+    </ul>
+  </div>
+  <div class="panel-body">
+    <div ng-include = "olPanelContentUrl||'panel-content-tpl.html'"></div>
+  </div>
+</div>

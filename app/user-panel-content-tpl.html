@@ -1,0 +1,20 @@
+<form name="myModel.usersForm">
+  <div class="form-group">
+    <label class="control-label" >User role:</label>
+    <span id="helpBlock2" class="help-block">Users will be added as Super admin, with permissions to access everything.</span>
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">Email Address:</label>
+    <span id="helpBlockEmail" class="help-block">List the emails of the users to ve invited.
+      They will receive an email inviting them to create account with Techbuds.</span>
+    <input type="text" class="form-control" ng-model="myModel.inviteEmails"
+    placeholder="Email Address" aria-describedby="helpBlockEmail">
+    <span class="help-block">Use a semi-colon to separate addresses.</span>
+  </div>
+
+  <div class="form-group pull-right">
+    <button class="btn" ng-click="olOnCancel()">Cancel</button>
+    <button type="submit" class="btn btn-default" ng-click="olOnOk()">Invite</button>
+  </div>
+</form>
